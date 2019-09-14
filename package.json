@@ -1,0 +1,66 @@
+{
+  "name": "last-minute-holidays-holding",
+  "version": "1.0.0",
+  "description": "Last Minute Holidays - Holding Page",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config webpack/config.production.js",
+    "start": "webpack-dev-server  --open --config webpack/config.development.js ",
+    "docker:build": "docker build --rm -f Dockerfile -t nginx-landing-page:latest .",
+    "docker:run": "docker run --rm -p 8080:80 nginx-landing-page:latest"
+  },
+  "author": "Giuseppe Ciotola",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "@hot-loader/react-dom": "^16.8.6",
+    "babel-eslint": "^10.0.2",
+    "babel-loader": "^8.0.6",
+    "copy-webpack-plugin": "^5.0.3",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^5.0.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.13.0",
+    "file-loader": "^4.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "polished": "^3.4.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.1",
+    "react-hot-loader": "^4.11.1",
+    "react-media": "^1.9.2",
+    "react-svg-loader": "^3.0.3",
+    "styled-components": "^4.3.1",
+    "webpack": "^4.34.0",
+    "webpack-cli": "^3.3.4",
+    "webpack-dev-server": "^3.7.1"
+  },
+  "dependencies": {
+    "core-js": "^2.6.9"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true,
+        "modules": true,
+        "experimentalObjectRestSpread": true
+      }
+    },
+    "env": {
+      "browser": true,
+      "node": true,
+      "amd": true,
+      "es6": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "plugin:prettier/recommended"
+    ]
+  }
+}
